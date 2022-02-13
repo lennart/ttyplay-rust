@@ -1,9 +1,17 @@
 [package]
 name = "ttyplay"
 version = "0.1.0"
-edition = "2018"
+edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-[dependencies]
+[lib]
+crate-type = ["cdylib"]
 
+[dependencies]
+vt100 = { path = "../vt100-rust", version = "0.15.1" }
+vte = "*"
+log = "*"
+env_logger = "*"
+wasm-bindgen = "*"
+js-sys = "*"
